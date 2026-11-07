@@ -1,0 +1,25 @@
+{
+  "name": "@pnpwin/dsh-token-vault",
+  "version": "1.0.2",
+  "private": true,
+  "type": "module",
+  "description": "Named credentials with explicit per-call injection for DSH commands, MCP and plugins",
+  "license": "MIT",
+  "author": "pnpwin",
+  "repository": { "type": "git", "url": "git+https://github.com/pnpwin/dsh-token-vault.git" },
+  "homepage": "https://github.com/pnpwin/dsh-token-vault#readme",
+  "bugs": { "url": "https://github.com/pnpwin/dsh-token-vault/issues" },
+  "engines": { "node": ">=22", "dsh": "0.2.2-rc.1" },
+  "exports": {
+    ".": "./src/host.js", "./host": "./src/host.js", "./client": "./src/client.js", "./mcp": "./src/mcp.js", "./api": "./src/vault.js",
+    "./locale/*.json": "./locale/*.json", "./icon": "./icon.svg",
+    "./mcp/locale/*.json": "./locale/*.json", "./mcp/icon": "./icon.svg",
+    "./host/locale/*.json": "./locale/*.json", "./host/icon": "./icon.svg"
+  },
+  "files": ["src", "tests", "locale", "cordis.patch.yml", "icon.svg", "README.md", "README.ru.md", "LICENSE", "UPSTREAM.md", "AGENTS.md"],
+  "scripts": { "build": "node src/build.mjs", "check": "node src/build.mjs", "test": "node --test tests/*.test.js" },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": { "platform": "web", "immediately": true, "inject": ["@deepseek-ai/dsh-client-ui-settings", "@deepseek-ai/dsh-client-locale"] }
+  }
+}

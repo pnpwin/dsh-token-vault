@@ -1,0 +1,4 @@
+- insert:
+    - id: pnpwin-token-vault
+      name: '@pnpwin/dsh-token-vault'
+      config: {}
