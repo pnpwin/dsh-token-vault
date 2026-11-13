@@ -1,6 +1,6 @@
 {
   "name": "@pnpwin/dsh-token-vault",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": true,
   "type": "module",
   "description": "Named credentials with explicit per-call injection for DSH commands, MCP and plugins",
@@ -9,7 +9,7 @@
   "repository": { "type": "git", "url": "git+https://github.com/pnpwin/dsh-token-vault.git" },
   "homepage": "https://github.com/pnpwin/dsh-token-vault#readme",
   "bugs": { "url": "https://github.com/pnpwin/dsh-token-vault/issues" },
-  "engines": { "node": ">=22", "dsh": "0.2.2-rc.1" },
+  "engines": { "node": ">=22", "dsh": ">=0.2.2-rc.1 <0.3.0" },
   "exports": {
     ".": "./src/host.js", "./host": "./src/host.js", "./client": "./src/client.js", "./mcp": "./src/mcp.js", "./api": "./src/vault.js",
     "./locale/*.json": "./locale/*.json", "./icon": "./icon.svg",

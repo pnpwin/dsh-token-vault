@@ -37,7 +37,7 @@ export async function validateDistribution(root = packageRoot) {
   const manifest = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
   assert.equal(manifest.name, '@pnpwin/dsh-token-vault');
   assert.equal(manifest.type, 'module');
-  assert.equal(manifest.engines.dsh, '0.2.2-rc.1');
+  assert.equal(manifest.engines.dsh, '>=0.2.2-rc.1 <0.3.0');
   assert.equal(manifest.exports['.'], './src/host.js');
   assert.equal(manifest.exports['./host'], manifest.exports['.']);
   assert.equal(manifest.exports['./client'], './src/client.js');

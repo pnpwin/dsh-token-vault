@@ -63,7 +63,7 @@ test('release source is portable and the packed manifest excludes private/genera
     assert.ok(!file.startsWith('.git/'));
     assert.ok(!/\.(?:tgz|log)$/.test(file));
   }
-  assert.equal(manifest.engines.dsh, '0.2.2-rc.1');
+  assert.equal(manifest.engines.dsh, '>=0.2.2-rc.1 <0.3.0');
   assert.equal(manifest.repository.url, 'git+https://github.com/pnpwin/dsh-token-vault.git');
   assert.ok(!Object.keys(manifest.scripts).some(script => /^(?:preinstall|install|postinstall|prepare)$/.test(script)));
   assert.ok((await readdir(packageRoot)).includes('tests'));
